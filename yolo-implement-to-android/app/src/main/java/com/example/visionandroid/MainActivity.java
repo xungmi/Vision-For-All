@@ -80,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         overlayView = findViewById(R.id.overlayView);
+        previewView = findViewById(R.id.previewView);
 
         // Khởi tạo ExecutorService cho luồng nền
         cameraExecutor = Executors.newSingleThreadExecutor();
@@ -120,7 +121,8 @@ public class MainActivity extends AppCompatActivity {
                                 .setScoreThreshold(0.5f); // Ngưỡng tin cậy (0.0 -> 1.0)
 
                 // !! THAY THẾ BẰNG TÊN FILE MODEL CỦA BẠN !!
-                String modelName = "yolov5.tflite";
+//                String modelName = "yolov5.tflite";
+                String modelName = "yolov5s_bhwc.tflite";
 
                 // Tạo ObjectDetector từ file model trong assets
                 objectDetector = ObjectDetector.createFromFileAndOptions(
